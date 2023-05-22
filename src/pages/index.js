@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import useNetwork from '@/data/network';
 import {getDistance} from '@/utils/getDistance';
 import Link from 'next/link';
+import VeloFoto from '@/components/VeloFoto'
 
 
 export default function Home() {
@@ -30,19 +31,40 @@ export default function Home() {
     }
   }, []);
 
+
+    const [filter,setFilter] = useState('');
+    
   if (isLoading) return <div>Loading...</div>
   if (isError) return <div>Error</div>
 
-  const stations = network.stations;
-  
+  const stations = network.stations.filter(station => station.name.toLowerCase().indexOf(filter.toLowerCase()) >= 0);
+
+  function handleFilterChange(e) {
+    setFilter(e.target.value);
+  }
+  console.log(stations)
+      
 
   return (
+    
+    
     <div className={styles.container}>
+       <div className={styles.zoekbalk}>
+        <input type="text" value={filter} onChange={handleFilterChange} placeholder="Zoek een station op" />
+      </div>
+
       <div className={styles.square}>
+
+     
         
         {stations.slice(0,9).map(station => (
           <Link href={`/stations/${station.id}`} key={station.id}>
-            {station.name}  <br /> <br />{Math.round(getDistance(location.latitude, location.longitude, station.latitude, station.longitude).distance/1000,2)} km
+           <VeloFoto station={station}/>
+
+           <div className={styles.achtergrondtext}>
+              {station.name}  <br /> <br />{Math.round(getDistance(location.latitude, location.longitude, station.latitude, station.longitude).distance/1000,2)} km
+           </div>
+           
           </Link>
         ))}
 

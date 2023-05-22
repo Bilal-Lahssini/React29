@@ -7,12 +7,12 @@
     width: 150px;
     display: flex;
     align-items: center;
-    margin-right: auto; /* Add this line */
+    margin-right: auto;
   }
 
   .titel h1{
     font-size: 50px;
-  
+    font-family: sans-serif;
     
   }
 

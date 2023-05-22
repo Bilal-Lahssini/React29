@@ -1,6 +1,8 @@
 import useNetwork from '@/data/network';
 import { useRouter } from 'next/router';
 import styles from '@/styles/secondPage.module.css';
+import VeloFoto from '@/components/VeloFoto'
+
 
 export default function Home() {
   const { network, isLoading, isError } = useNetwork()
@@ -19,10 +21,17 @@ export default function Home() {
         <h1>{station.name}</h1>
       </div>
 
+      <VeloFoto station={station}/>
+      
+      <div className={styles.textdecor}>
+        <h1>Prijs :</h1>
+        <h2>Aantal minuten</h2>
+        <p>Aantal vrije fietsen {station.free_bikes}</p>
+        <p>Aantal vrije plaatsen {station.empty_slots}</p>
+      </div>
+
       
       
-      <p>Aantal vrije fietsen {station.free_bikes}</p>
-      <p>Aantal vrije plaatsen {station.empty_slots}</p>
     </div>
   )
 }

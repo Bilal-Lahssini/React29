@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+
 .isVisible {
   opacity: 1;
 }
@@ -16,25 +19,43 @@
 .square {
   display: grid;
   grid-gap: 40px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
 
 .square a{
-  background-color: beige;
-  padding: 50px;
-  box-shadow: 5px 4px #888888;
+position: relative;
+  padding: 2px;
   border-radius: 15px;
   font-weight: bold;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: sans-serif;
 }
+
+.rarefoto{
+  border-radius: 15px;
+  width: 450px;
+  height: 200px;
+  display: block;
+  filter: grayscale(50%);
+}
+
+.achtergrondtext{
+  position: absolute;
+  top: 130px;
+  right: 0;
+  left: 10px;
+  color: white;
+}
+
+
 
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3%;
+  font-family: sans-serif;
 
 }
 
@@ -48,6 +69,26 @@
   width: 40px;
   margin: 0 15px;
 }
+
+  .zoekbalk{
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 8px;
+    width: 30%;
+    margin-left: 35%;
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  .zoekbalk input[type="text"] {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    color: #333;
+  }
 
 
 @media (min-width: 768px) {
@@ -81,6 +122,27 @@
     width: 30px;
     margin: 0 5px;
     margin-bottom: 30px;
+  }
+
+  .zoekbalk{
+    display: flex;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 10px;
+    margin-left: 3%;
+    width: 95%;
+    
+  }
+
+  .zoekbalk input[type="text"] {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
   }
 
   

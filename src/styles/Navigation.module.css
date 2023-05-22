@@ -1,0 +1,37 @@
+.nav {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .logoContainer img{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Add this line */
+  }
+
+  .titel h1{
+    font-size: 50px;
+  
+    
+  }
+
+  
+
+  @media (max-width: 767px) {
+    .logoContainer img{
+      width: 150px;
+      display: flex;
+      align-items: center;
+    }
+
+    .titel h1{
+      margin-top: 50px;
+    }
+
+    .titel h1 a{
+      text-align: center;
+    }
+    
+  }
+ 

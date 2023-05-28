@@ -7,6 +7,7 @@ import Link from 'next/link';
 import VeloFoto from '@/components/VeloFoto'
 
 
+
 export default function Home() {
 
   const [location, setLocation] = useState({});
